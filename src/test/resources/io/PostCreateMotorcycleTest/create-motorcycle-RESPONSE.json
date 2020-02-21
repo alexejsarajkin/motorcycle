@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "brandResponse": "HD",
+  "model": "Sport Glide",
+  "type": {
+    "id": 1,
+    "name": "Cruiser"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "timestamp": "${json-unit.ignore}",
+  "path": "/motorcycles/motorcycle/create",
+  "statusCode": "BAD_REQUEST",
+  "errors": [
+    "Brand is not valid",
+    "Model is not valid",
+    "Type is not valid"
+  ]
+}

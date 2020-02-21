@@ -1,0 +1,11 @@
+INSERT INTO public.type (name) VALUES ('Cruiser');
+INSERT INTO public.type (name) VALUES ('Sport');
+INSERT INTO public.type (name) VALUES ('Naked');
+INSERT INTO public.type (name) VALUES ('Cross');
+INSERT INTO public.type (name) VALUES ('Case racer');
+INSERT INTO public.role (name) VALUES ('ADMIN');
+INSERT INTO public.role (name) VALUES ('READ_ONLY');
+INSERT INTO public.users (email, first_name, last_name, login, password) VALUES ('admin email', 'admin first name', 'admin last name', 'admin', '$2a$10$Wz3rxHRXYV6hwfRpYbMns.yyTlP2r8p1oykhpWYIF7zLEKa49xNyS');
+INSERT INTO public.users_role (users_id, role_id) VALUES (1, 1);
+INSERT INTO public.users (email, first_name, last_name, login, password) VALUES ('reader email', 'reader first name', 'reader last name', 'reader', '$2a$10$skT5DY0622cjLxBdzgC7nulG1BD/2uuNClOxrMTcCCOoNN.zn0jU2');
+INSERT INTO public.users_role (users_id, role_id) VALUES (2, 2);
