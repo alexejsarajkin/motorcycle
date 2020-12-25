@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class MotorcycleCreateDTO {
-  private String brand;
-  private String model;
-  private String typeName;
+    private String brand;
+    private String model;
+    private String typeName;
 }

@@ -19,36 +19,36 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @ContextConfiguration(initializers = {PostAuthenticationTest.Initializer.class})
 public class PostAuthenticationTest extends BaseRestEndpointTest {
 
-  @ClassRule
-  public static PostgreSQLContainer postgreSQLContainer = createPostgresSQLContainer();
+    @ClassRule
+    public static PostgreSQLContainer postgreSQLContainer = createPostgresSQLContainer();
 
-  public static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
+    public static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
-    @Override
-    public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
-      TestPropertyValues.of(
-          "spring.datasource.url=" + postgreSQLContainer.getJdbcUrl(),
-          "spring.datasource.username=" + postgreSQLContainer.getUsername(),
-          "spring.datasource.password=" + postgreSQLContainer.getPassword())
-          .applyTo(configurableApplicationContext.getEnvironment());
+        @Override
+        public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
+            TestPropertyValues.of(
+                    "spring.datasource.url=" + postgreSQLContainer.getJdbcUrl(),
+                    "spring.datasource.username=" + postgreSQLContainer.getUsername(),
+                    "spring.datasource.password=" + postgreSQLContainer.getPassword())
+                    .applyTo(configurableApplicationContext.getEnvironment());
+        }
     }
-  }
 
-  @Test
-  public void authentication() throws Exception {
-    // Given
-    String fileNamePrefix = "authentication";
+    @Test
+    public void authentication() throws Exception {
+        // Given
+        String fileNamePrefix = "authentication";
 
-    // When
-    MvcResult mvcResult = getMockMvc().perform(
-        post(getBaseUrl() + "/authentication")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(readRequest(fileNamePrefix)))
-        .andDo(print())
-        .andReturn();
+        // When
+        MvcResult mvcResult = getMockMvc().perform(
+                post(getBaseUrl() + "/authentication")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(readRequest(fileNamePrefix)))
+                .andDo(print())
+                .andReturn();
 
-    // Then
-    assertEquals("Wrong response status", HttpStatus.OK.value(), mvcResult.getResponse().getStatus());
-    assertJsonEquals(readResponse(fileNamePrefix), mvcResult.getResponse().getContentAsString());
-  }
+        // Then
+        assertEquals("Wrong response status", HttpStatus.OK.value(), mvcResult.getResponse().getStatus());
+        assertJsonEquals(readResponse(fileNamePrefix), mvcResult.getResponse().getContentAsString());
+    }
 }

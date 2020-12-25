@@ -4,5 +4,5 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface IMvcFacade {
 
-  ModelAndView retrieveAllType();
+    ModelAndView retrieveAllType();
 }

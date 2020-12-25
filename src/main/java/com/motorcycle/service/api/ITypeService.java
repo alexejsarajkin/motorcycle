@@ -1,17 +1,17 @@
 package com.motorcycle.service.api;
 
-import java.util.List;
-
 import com.motorcycle.db.datamodel.TypeEntity;
 
+import java.util.List;
+
 public interface ITypeService {
-  List<TypeEntity> retrieveAllType();
+    List<TypeEntity> retrieveAllType();
 
-  TypeEntity retrieveTypeByName(String name);
+    TypeEntity retrieveTypeByName(String name);
 
-  TypeEntity createType(TypeEntity typeEntity);
+    TypeEntity createType(TypeEntity typeEntity);
 
-  void deleteType(Integer id);
+    void deleteType(Integer id);
 
-  void saveTypeToFile();
+    void saveTypeToFile();
 }

@@ -1,12 +1,12 @@
 package com.motorcycle.db.datamodel;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Data
 @AllArgsConstructor
@@ -15,6 +15,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "type")
 public class TypeEntity extends BaseEntity {
 
-  @Column(unique = true, nullable = false)
-  private String name;
+    @Column(unique = true, nullable = false)
+    private String name;
 }

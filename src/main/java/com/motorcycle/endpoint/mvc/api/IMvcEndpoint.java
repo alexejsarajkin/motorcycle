@@ -5,6 +5,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 public interface IMvcEndpoint {
 
-  @GetMapping("/type/all")
-  ModelAndView typeRetrieveAll();
+    @GetMapping("/type/all")
+    ModelAndView typeRetrieveAll();
 }

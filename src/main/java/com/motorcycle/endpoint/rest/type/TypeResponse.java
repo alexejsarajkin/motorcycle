@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class TypeResponse {
-  private Integer id;
-  private String name;
+    private Integer id;
+    private String name;
 }
